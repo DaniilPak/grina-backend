@@ -44,10 +44,10 @@ def get_videotest(request, videotest_id):
     json_server_choice_2 = serializers.serialize('python', [videotest.server_choice_2])
     json_server_choice_3 = serializers.serialize('python', [videotest.server_choice_3])
     json_server_choice_4 = serializers.serialize('python', [videotest.server_choice_4])
-    videotest_data[0]['fields']['server_choice_1'] = json_server_choice_1[0]
-    videotest_data[0]['fields']['server_choice_2'] = json_server_choice_2[0]
-    videotest_data[0]['fields']['server_choice_3'] = json_server_choice_3[0]
-    videotest_data[0]['fields']['server_choice_4'] = json_server_choice_4[0]
+    videotest_data[0]['fields']['server_choice_1'] = json_server_choice_1[0]['fields']
+    videotest_data[0]['fields']['server_choice_2'] = json_server_choice_2[0]['fields']
+    videotest_data[0]['fields']['server_choice_3'] = json_server_choice_3[0]['fields']
+    videotest_data[0]['fields']['server_choice_4'] = json_server_choice_4[0]['fields']
 
     context = {
         'videotest_data': json.dumps(videotest_data),
