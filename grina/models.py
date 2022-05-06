@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from email.mime import image
 from pyexpat import model
 from secrets import choice
@@ -34,7 +35,7 @@ class ServerChoice(models.Model):
 
 class VideoTest(models.Model):
     id = models.AutoField(primary_key=True)
-    source = models.FileField()
+    source = models.FileField(upload_to='grinavideos')
     poster = models.URLField()
     tip = models.CharField(max_length=200)
     server_choice_1 = models.ForeignKey(ServerChoice, on_delete=models.CASCADE, related_name='sc1')
