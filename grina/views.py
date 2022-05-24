@@ -28,7 +28,7 @@ def index(request):
         # New stuff
         current_course = Course.objects.get(id=idx+1)
         course_datas = serializers.serialize('python', current_course.data.all())
-        item['fields']['section'] = 'editted section'
+        item['fields']['section'] = current_course.section
         item['fields']['data'] = course_datas
         # Fixing Data objects
         for idx2, data_item in enumerate(course_datas):
